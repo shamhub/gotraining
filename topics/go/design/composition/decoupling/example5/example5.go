@@ -104,7 +104,7 @@ func store(s Storer, data []Data) (int, error) {
 }
 
 // Copy knows how to pull and store data from any System.
-func Copy(sys *System, batch int) error {
+func Copy(sysPtr *System, batch int) error {
 	data := make([]Data, batch)
 
 	for {
