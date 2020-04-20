@@ -108,9 +108,9 @@ func Copy(sysPtr *System, batch int) error {
 	data := make([]Data, batch)
 
 	for {
-		i, err := pull(sys, data)
+		i, err := pull(sysPtr, data)
 		if i > 0 {
-			if _, err := store(sys, data[:i]); err != nil {
+			if _, err := store(sysPtr, data[:i]); err != nil {
 				return err
 			}
 		}
